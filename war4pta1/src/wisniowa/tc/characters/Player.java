@@ -52,12 +52,23 @@ public abstract class Player {
     }
 
     public void setX(int x) {
-        if (x > Constants.MAX_LEFT_POSITION && x < Constants.MAX_RIGHT_POSITION) {
+        if (x > Constants.MAX_LEFT_POSITION && x < (Constants.MAX_RIGHT_POSITION - 15)) {
             this.x = x;
+        } else if (x <= Constants.MAX_LEFT_POSITION ) {
+            this.x = Constants.MAX_LEFT_POSITION;
+        } else if (x >= (Constants.MAX_RIGHT_POSITION - 15)) {
+            this.x = (Constants.MAX_RIGHT_POSITION - 15);
         }
     }
 
     public void setY(int y) {
-        this.y = y;
+        if (y > 0 && y < (Constants.WINDOW_HEIGHT - 50)) {
+            this.y = y;
+        } else if (y <= 0) {
+            this.y = 0;
+        } else if (y >= (Constants.WINDOW_HEIGHT - 50)) {
+            this.y = (Constants.WINDOW_HEIGHT - 50);
+        }
     }
+
 }

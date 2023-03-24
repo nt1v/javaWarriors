@@ -36,13 +36,22 @@ public class GamePanel extends JPanel {
 
             if (key == KeyEvent.VK_RIGHT) {
                 for (Player player : team.getMembers()) {
-                    player.setX(player.getX() + 20);
+                    player.setX(player.getX() + 10);
                 }
-            } else {
+            } else if (key == KeyEvent.VK_LEFT) {
                 for (Player player : team.getMembers()) {
-                    player.setX(player.getX() - 20);
+                    player.setX(player.getX() - 10);
+                }
+            } else if (key == KeyEvent.VK_UP) {
+                for (Player player : team.getMembers()) {
+                    player.setY(player.getY() - 10);
+                }
+            } else if (key == KeyEvent.VK_DOWN) {
+                for (Player player : team.getMembers()) {
+                    player.setY(player.getY() + 10);
                 }
             }
+
             repaint();
         }
     }
