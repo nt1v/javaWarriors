@@ -52,22 +52,22 @@ public abstract class Player {
     }
 
     public void setX(int x) {
-        if (x > Constants.MAX_LEFT_POSITION && x < (Constants.MAX_RIGHT_POSITION - 15)) {
+        if (x > Constants.MAX_LEFT_POSITION && x < (Constants.WINDOW_REAL_WIDTH)) {
             this.x = x;
         } else if (x <= Constants.MAX_LEFT_POSITION ) {
             this.x = Constants.MAX_LEFT_POSITION;
-        } else if (x >= (Constants.MAX_RIGHT_POSITION - 15)) {
-            this.x = (Constants.MAX_RIGHT_POSITION - 15);
+        } else if (x >= (Constants.WINDOW_REAL_WIDTH)) {
+            this.x = (Constants.WINDOW_REAL_WIDTH);
         }
     }
 
     public void setY(int y) {
-        if (y > 0 && y < (Constants.WINDOW_HEIGHT - 50)) {
+        if (y > Constants.MAX_UP_POSITION && y < Constants.WINDOW_REAL_HEIGHT) {
             this.y = y;
-        } else if (y <= 0) {
-            this.y = 0;
-        } else if (y >= (Constants.WINDOW_HEIGHT - 50)) {
-            this.y = (Constants.WINDOW_HEIGHT - 50);
+        } else if (y <= Constants.MAX_UP_POSITION) {
+            this.y = Constants.MAX_UP_POSITION;
+        } else if (y >= Constants.WINDOW_REAL_HEIGHT) {
+            this.y = Constants.WINDOW_REAL_HEIGHT;
         }
     }
 
